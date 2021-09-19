@@ -1,0 +1,30 @@
+/* background-color: #ededf5; */
+
+
+.login{
+    width: 550px;
+    margin: 100px auto;
+}
+.application-title{
+    font-family: 'Carattere', cursive;
+}
+.form__input{
+    width: 500px;
+    text-align: center;
+}
+.login__forgotpassword{
+    margin:15px;
+    display: flex;
+    justify-content: space-between;
+}
+.login__forgotpassword a{
+    font-size: 12px;
+}
+@media screen and (max-width:760px){
+        .login{
+            width: 300px;
+        }
+        .form__input{
+            width: 250px;
+        }
+}
