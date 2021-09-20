@@ -7,9 +7,22 @@
     text-align: center;
     font-size: 12px;
 }
+.css-134l0rj-MuiPaper-root-MuiAlert-root{
+        padding:2px !important;
+        margin:20px 0px !important;
+}
+.css-1ytlwq5-MuiAlert-icon{
+    margin-right: 6px !important;
+}
+
+.css-acap47-MuiAlert-message{
+    padding: 7px;
+}
 @media screen and (max-width:760px){
     .register{
         width: 300px;
     }
-
+    .css-134l0rj-MuiPaper-root-MuiAlert-root{
+        font-size: 10px !important;
+    }
 }
