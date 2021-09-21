@@ -1,17 +1,20 @@
-import React, { useState } from 'react'
+import React, { useState,useContext } from 'react'
 import { Input,Card} from '@material-ui/core';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import "./Register.css"
 import {createUserWithEmailAndPassword,updateProfile } from "firebase/auth";
 import {auth} from '../firebase'
-import { Stack } from '@mui/material';
 import Alert from '@mui/material/Alert';
-
+import { AuthContext } from './Auth';
+import { useHistory } from "react-router-dom";
 function Register() {
+    let history = useHistory();
+    const {currentUser}=useContext(AuthContext)
     const [username,setUsername]=useState("");
     const [email,setEmail]=useState("");
     const [password,setPassword]=useState("");
     const [hasError,setHasError]=useState("");
+
     const handleSubmit=(e)=>{
         e.preventDefault();
         createUserWithEmailAndPassword(auth,email,password)
@@ -23,6 +26,7 @@ function Register() {
                 setUsername("");
                 setPassword("");
                 setEmail("");
+                history.push("/");
             })
             .catch((error)=>{
                 setHasError(error.message);
@@ -31,6 +35,9 @@ function Register() {
         .catch((error)=>{
             setHasError(error.message);
         })
+    }
+    if(currentUser){
+        <Redirect to="/" />
     }
     return (
         <div className="register">

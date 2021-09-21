@@ -1,14 +1,17 @@
 import React from 'react'
 import './Login.css'
 import { Input,Card } from '@material-ui/core';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import { useState } from 'react';
 import {auth} from '../firebase'
-import { signInWithEmailAndPassword } from "firebase/auth";
+import {signInWithEmailAndPassword } from "firebase/auth";
 import Alert from '@mui/material/Alert';
 import { useHistory } from "react-router-dom";
+import { useContext } from 'react';
+import { AuthContext } from './Auth';
 function Login() {
     let history = useHistory();
+    const {currentUser}=useContext(AuthContext)
     const [email,setEmail]=useState("");
     const [password,setPassword]=useState("")
     const [hasError,setHasError]=useState("");
@@ -24,6 +27,9 @@ function Login() {
         .catch((error)=>{
             setHasError(error.message);
         })
+    }
+    if(currentUser){
+        return <Redirect to="/" />
     }
     return (
         <div className="login">
