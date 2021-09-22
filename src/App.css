@@ -26,6 +26,16 @@ border-radius=>10px */
     background-color: #74b9ff;
     color:#dfe6e9;
  }
+ .instagram{
+   height: 100vh;
+ }
+ a{
+  color:#555
+}
+hr{
+  margin: 5px 0px;
+ 
+}
 .App{
 
 }

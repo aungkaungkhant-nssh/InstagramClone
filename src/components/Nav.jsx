@@ -5,7 +5,7 @@ import Avatar from '@mui/material/Avatar';
 import { useEffect } from 'react';
 import { useState } from 'react';
 
-function Nav() {
+function Nav({showDialogBox}) {
     const [isMobile,setIsMobile]=useState(false);
     useEffect(()=>{
         if(window.innerWidth<760){
@@ -21,7 +21,7 @@ function Nav() {
                     <div>
                         <Input placeholder="search" />
                     </div>
-                    <div className="profile">
+                    <div className="profile" onClick={showDialogBox}>
                         <img src="https://ui-avatars.com/api/?name=aungkaungkhant&background=0984e3&color=fff" alt="" />
                     </div>
                 </div>
