@@ -55,15 +55,17 @@ function ProfileDetail() {
                   <div className="profile__bio my-3">
                         <div className="d-flex justify-content-between align-items-center my-2">
                             <h6 className="mb-0">Name</h6>
-                            <span className="text-muted text-center">{currentUser.displayName}</span>
+                            <span className="text-muted text-center profile__text">{currentUser.displayName}</span>
                         </div>
+                        <hr />
                         <div className="d-flex justify-content-between align-items-center my-2">
                             <h6 className=" mb-0">Email</h6>
-                            <span className="text-muted text-center">{currentUser.email}</span>
+                            <span className="text-muted text-center  profile__text">{currentUser.email}</span>
                         </div>
+                        <hr />
                   </div>
                   <div className="mb-2">
-                        <span className="text-muted change__password" onClick={()=>setOpen(true)}>Change Password</span>
+                        <span className="change__password" onClick={()=>setOpen(true)}>Change Password</span>
                   </div>
                   
             </Card>

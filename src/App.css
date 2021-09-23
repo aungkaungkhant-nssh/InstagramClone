@@ -22,6 +22,7 @@ border-radius=>10px */
    transition: all .5s;
 
  }
+
  .btn-theme:hover{
     background-color: #74b9ff;
     color:#dfe6e9;

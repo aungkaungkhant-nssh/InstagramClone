@@ -1,5 +1,5 @@
 .profile__detail{
-    width: 60%;
+    width: 70%;
     margin: 80px auto;
 
 }
@@ -7,8 +7,11 @@
     padding: 10px 20px 4px 20px;
 }
 .profile__bio{
-    width: 300px;
+    width: 400px;
     margin: 0px auto;
+}
+.profile__bio h6{
+    font-size: 15px;
 }
 .bio{
     display: flex;
@@ -16,9 +19,14 @@
 }
 .change__password{
     cursor: pointer;
+    color:#0984e3;
 }
 .password__update{
     margin-left: 40px;
+
+}
+.profile__text{
+    font-size:10px
 }
 @media screen and (max-width:760px){
     .profile__detail{

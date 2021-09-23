@@ -34,7 +34,9 @@ function Nav({showDialogBox}) {
             {
                 !isMobile &&
                 <div className="nav__header">
-                    <h3 className="application-title">Instagram</h3>
+                    <Link to="/">
+                        <h3 className="application-title">Instagram</h3>
+                    </Link>
                     <div>
                         <Input placeholder="search" />
                     </div>
@@ -47,7 +49,10 @@ function Nav({showDialogBox}) {
                isMobile &&
                <div className="nav__header">
                <div>
-                    <h3 className="application-title">Instagram</h3>
+                    <Link to="/">
+                        <h3 className="application-title">Instagram</h3>
+                    </Link>
+                   
                </div>
                <div className="profile"  onClick={()=>setShowDialog(!showDialog)}>
                     <img src={avatar} alt="" />
