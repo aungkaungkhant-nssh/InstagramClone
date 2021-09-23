@@ -2,28 +2,12 @@ import React, { useContext } from 'react'
 import { Button, Card } from '@material-ui/core';
 import "./Posts.css"
 import { AuthContext } from './Auth';
-import { Link } from 'react-router-dom';
-import { auth } from '../firebase';
-import { useState } from 'react';
-function Posts({showDialog}) {
+
+function Posts() {
     const {currentUser}=useContext(AuthContext);
+    console.log(window.history)
     return (
-        <div className="posts mb-3">
-            {
-                showDialog &&
-                <div className="dialog__box">
-                    <div>
-                        <Link to="/">Profile</Link>
-                    </div>
-                    <hr />
-                    <div>
-                        <p className="logout__btn" onClick={()=>auth.signOut()}>Logout</p>
-                    </div>
-                </div>
-            }
-               
-        
-            
+        <div className="posts mb-3">  
             <Card className="post__card">
                 <div className="post__header">
                     <div className="post__title" >

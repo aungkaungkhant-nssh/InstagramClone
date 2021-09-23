@@ -29,6 +29,7 @@ function Login() {
         })
     }
     if(currentUser){
+     
         return <Redirect to="/" />
     }
     return (

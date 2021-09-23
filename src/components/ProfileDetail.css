@@ -1,0 +1,31 @@
+.profile__detail{
+    width: 60%;
+    margin: 80px auto;
+
+}
+.profile__detail__card{
+    padding: 10px 20px 4px 20px;
+}
+.profile__bio{
+    width: 300px;
+    margin: 0px auto;
+}
+.bio{
+    display: flex;
+    justify-content: space-between;
+}
+.change__password{
+    cursor: pointer;
+}
+.password__update{
+    margin-left: 40px;
+}
+@media screen and (max-width:760px){
+    .profile__detail{
+        width: 96%;
+    }
+    .profile__bio{
+        width: 250px;
+    }  
+    
+}

@@ -5,13 +5,15 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { onAuthStateChanged } from '@firebase/auth';
 import {auth} from './firebase'
-
+import { AuthPorvider } from './components/Auth';
 let app;
 onAuthStateChanged(auth,()=>{
    if(!app){
     app=ReactDOM.render(
       <React.StrictMode>
-        <App />
+           <AuthPorvider>
+              <App />
+           </AuthPorvider>
       </React.StrictMode>,
       document.getElementById('root')
     );
