@@ -4,16 +4,18 @@ import "./Posts.css"
 import { AuthContext } from './Auth';
 import { useEffect } from 'react';
 import {db} from '../firebase'
-import { collection,onSnapshot } from "firebase/firestore"; 
+import { collection,onSnapshot, query ,orderBy} from "firebase/firestore"; 
 import { useState } from 'react';
 function Posts() {
     const {currentUser}=useContext(AuthContext);
     const [postsError,setPostsError]=useState();
     const [posts,setPosts]=useState([]);
-    useEffect(()=>{
-        
+    const [comment,setComment]=useState("");
+
+    useEffect(()=>{        
         onSnapshot(
-            collection(db, "posts"), 
+            query(collection(db, "posts"),orderBy("created_at","desc"))
+            ,
             (snapshot) => {
               const data=[]
               snapshot.forEach((doc)=>{
@@ -24,9 +26,11 @@ function Posts() {
             (error) => {
               setPostsError(error.message)
             });
-   
     },[])
-
+    const sendComment=(e)=>{
+        e.preventDefault();
+        alert(1)
+    }
     return (
         <div className="posts">  
             {
@@ -57,12 +61,14 @@ function Posts() {
                         <span class="text-muted">View All Comment</span>
                     </div>
                     <div className="post__comment__box">
-                        <div class="input-group">
-                            <input type="text" className="form-control" placeholder="Add a comment"  />
-                            <div class="input-group-append">
-                                <span className="input-group-text" id="basic-addon2">post</span>
+                        <form onSubmit={sendComment}>
+                            <div class="input-group">
+                                <input type="text" className="form-control" placeholder="Add a comment" value={comment} onChange={(e)=>setComment(e.target.value)}/>
+                                <div class="input-group-append">
+                                    <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                                </div>
                             </div>
-                        </div>
+                        </form>
                     </div>
                 </div>
             </Card> 

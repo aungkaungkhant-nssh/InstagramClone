@@ -23,6 +23,9 @@
     left: 20px;
     font-size: 20px;
 }
+.imageprogress{
+    width: 60%;
+}
 @media screen and (max-width:760px){
     .create__post{
       width: 300px;
