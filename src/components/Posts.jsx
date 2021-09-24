@@ -26,14 +26,14 @@ function Posts() {
             });
    
     },[])
-    console.log(posts)
+
     return (
-        <div className="posts mb-3">  
+        <div className="posts">  
             {
                posts.map((post)=>{
                    const avatar=`https://ui-avatars.com/api/?name=${post.username}&background=0984e3&color=fff`;
                    return(
-            <Card className="post__card mb-5">
+            <Card className="post__card mb-3">
                 <div className="post__header">
                     <div className="post__title" >
                         <img src={avatar} alt="" />

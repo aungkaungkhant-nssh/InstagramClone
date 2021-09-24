@@ -5,8 +5,8 @@ import Login from './components/Login'
 import Register from './components/Register'
 import Profile from './components/Profile'
 import ProtectedRoute from './ProtectedRoute';
-
 import Instagram from './components/Instagram'
+import CreatePost from './components/CreatePost'
 function App() {
   return (
       <Router>
@@ -14,6 +14,7 @@ function App() {
             <Switch>
                   <ProtectedRoute exact path="/" component={Instagram} />
                   <ProtectedRoute  path="/profile" component={Profile}  />
+                  <ProtectedRoute path="/createPost" component={CreatePost} />
                   <Route path="/login" component={Login} ></Route>
                   <Route path="/register" component={Register}></Route>
             </Switch>

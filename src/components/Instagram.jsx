@@ -1,14 +1,15 @@
 import React,{useState} from 'react'
+import Footer from './Footer'
 import Nav from './Nav'
 import Posts from './Posts'
-// import ImageUpload from './ImageUpload'
+
 function Instagram() {
    
     return (
         <div className="instagram">
             <Nav />
             <Posts/>
-            {/* <ImageUpload /> */}
+            <Footer />
         </div>
     )
 }

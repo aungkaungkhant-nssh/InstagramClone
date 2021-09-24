@@ -1,9 +1,14 @@
 .posts{
+    padding-bottom: 60px;
     width: 54%;
     margin: 80px auto;
+  
+}
+.posts::-webkit-scrollbar {
+    display: none;
 }
 .post__card{
- 
+   /* margin-bottom: 100px !important; */
 }
 .post__title{
     display: flex;
