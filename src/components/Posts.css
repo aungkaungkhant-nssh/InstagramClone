@@ -56,6 +56,12 @@
 .change__password{
     font-size: 13px;
 }
+.all__comment{
+    cursor: pointer;
+}
+.all__comment:hover{
+    color: #0984e3 !important;
+}
 @media screen and (max-width:760px){
     .posts{
         width: 90%;
