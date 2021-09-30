@@ -38,6 +38,7 @@
 }
 .post__react i{
     font-size: 20px;
+    cursor: pointer;
 }
 .post__comment{
     padding: 0px 10px 4px 10px;
